@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+   <children>
+      <AnchorPane fx:id="anchorPane" prefHeight="103.0" prefWidth="426.0" style="-fx-background-color: #FCFCFC;">
+         <children>
+            <Label fx:id="entryName" prefHeight="40.0" prefWidth="150.0" text="New Entry Name:" textFill="#20d747">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ColorPicker layoutX="363.0" layoutY="8.0" prefHeight="26.0" prefWidth="40.0" />
+            <TextField id="border" layoutY="39.0" pickOnBounds="false" prefHeight="26.0" prefWidth="426.0" promptText="Add Location" style="-fx-background-color: #FCFCFC;" stylesheets="@style.css" />
+            <Label layoutX="14.0" layoutY="73.0" text="Details" textFill="#ddd4d4">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField id="border" fx:id="entryBTNName" layoutX="144.0" layoutY="8.0" onMouseExited="#entryNameChanged" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
+      <AnchorPane blendMode="DARKEN" layoutX="-1.0" layoutY="97.0" prefHeight="176.0" prefWidth="426.0" style="-fx-background-color: #F8F8F3;">
+         <children>
+            <Label fx:id="labelDate" layoutX="293.0" layoutY="41.0" text=":" />
+            <CheckBox layoutX="91.0" layoutY="14.0" mnemonicParsing="false" textFill="#f8f3f3" />
+            <Label layoutX="37.0" layoutY="14.0" text="Full Day:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="36.0" layoutY="40.0" text="From:" />
+            <Label layoutX="44.0" layoutY="74.0" text="To:" />
+            <DatePicker layoutX="73.0" layoutY="37.0" />
+            <DatePicker layoutX="73.0" layoutY="70.0" />
+            <TextField layoutX="260.0" layoutY="36.0" prefHeight="20.0" prefWidth="26.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="307.0" layoutY="36.0" prefHeight="26.0" prefWidth="26.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="260.0" layoutY="70.0" prefHeight="26.0" prefWidth="26.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="307.0" layoutY="70.0" prefHeight="26.0" prefWidth="26.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <Label fx:id="labelDate1" layoutX="295.0" layoutY="74.0" text=":" />
+            <Label layoutX="31.0" layoutY="120.0" text="Repeat:" />
+            <ComboBox layoutX="76.0" layoutY="117.0" prefWidth="150.0" promptText="None" visibleRowCount="5" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="969.0" prefWidth="1495.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+   <children>
+
+      <AnchorPane layoutX="-55.0" layoutY="-31.0" prefHeight="767.0" prefWidth="288.0">
+         <children>
+            <Button fx:id="charts" layoutY="210.0" mnemonicParsing="false" onAction="#showChartPane" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: green;" text="Charts" wrapText="true" />
+            <Button layoutY="255.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: purple;" text="Report" wrapText="true" />
+            <ImageView fx:id="myMainImage" fitHeight="150.0" fitWidth="200.0" layoutX="104.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/img.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="1.0" layoutY="165.0" mnemonicParsing="false" onAction="#showHoursPane" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: blue;" text="Log Hours" wrapText="true" />
+            <TextField fx:id="test" layoutX="104.0" layoutY="654.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneChart" layoutX="276.0" prefHeight="833.0" prefWidth="894.0" visible="false">
+         <children>
+            <PieChart fx:id="pieChart" layoutX="24.0" layoutY="25.0" prefHeight="363.0" prefWidth="428.0" />
+            <HBox layoutX="3.0" layoutY="387.0" prefHeight="446.0" prefWidth="889.0">
+               <children>
+                  <VBox prefHeight="385.0" prefWidth="451.0">
+                     <children>
+                        <LineChart fx:id="lineChart" opacity="0.0" title="LineChart">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="446.0" prefWidth="442.0">
+                     <children>
+                        <AreaChart fx:id="areaChart" opacity="0.0" prefHeight="398.0" prefWidth="409.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </AreaChart>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="452.0" layoutY="6.0" prefHeight="376.0" prefWidth="440.0">
+               <children>
+                  <BarChart fx:id="barChart" opacity="0.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="myImage" fitHeight="150.0" fitWidth="200.0" layoutX="1259.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/8T658e4kc.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="anchorPaneHours" layoutX="285.0" prefHeight="931.0" prefWidth="856.0">
+         <children>
+            <BorderPane fx:id="calendar" prefHeight="880.0" prefWidth="918.0">
+               <center>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                      <Tab text="Month View">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="730.0" prefWidth="918.0">
+                                 <children>
+                                    <AnchorPane fx:id="MarchAnchorpane" layoutY="44.0" prefHeight="636.0" prefWidth="889.0">
+                                       <children>
+                                          <GridPane fx:id="gridPaneMonth" alignment="BOTTOM_CENTER" gridLinesVisible="true" prefHeight="680.0" prefWidth="894.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <AnchorPane fx:id="anchorpaneMD1" onMouseClicked="#addNote" prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" prefHeight="45.0" prefWidth="21.0" text="1" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane fx:id="anchorpaneMD2" onMouseClicked="#addEntry2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" prefHeight="45.0" prefWidth="21.0" text="2" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane fx:id="anchorpaneMD3" onMouseClicked="#addEntry3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" prefHeight="45.0" prefWidth="21.0" text="3" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="45.0" prefWidth="21.0" text="4" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="1.0" prefHeight="45.0" prefWidth="21.0" text="5" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="21.0" text="6" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="6.0" prefHeight="45.0" prefWidth="21.0" text="7" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="4.0" prefHeight="45.0" prefWidth="21.0" text="8" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="45.0" prefWidth="21.0" text="9" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="70.0" prefWidth="54.0" text="10" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="3.0" prefHeight="70.0" prefWidth="54.0" text="11" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="12" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="13" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="14" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="70.0" prefWidth="54.0" text="15" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="17" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="16" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="18" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="19" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="20" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="21" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="22" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="23" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="4.0" prefHeight="70.0" prefWidth="54.0" text="24" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="7.0" prefHeight="70.0" prefWidth="54.0" text="25" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="26" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" prefHeight="70.0" prefWidth="54.0" text="27" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="28" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="29" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="30" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane onMouseClicked="#addNewEntry" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="31" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" prefHeight="70.0" prefWidth="54.0" style="-fx-background-color: grey;" text="1" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" style="-fx-background-color: grey;" text="2" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="70.0" prefWidth="54.0" style="-fx-background-color: grey;" text="3" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="70.0" prefWidth="54.0" style="-fx-background-color: grey;" text="4" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label contentDisplay="CENTER" graphicTextGap="205.0" layoutX="33.0" layoutY="6.0" prefHeight="26.0" prefWidth="81.0" text="Monday" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="157.0" layoutY="6.0" text="Tuesday">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="276.0" layoutY="6.0" text="Wednesday">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="412.0" layoutY="6.0" text="Thursday">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="547.0" layoutY="6.0" text="Friday">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="659.0" layoutY="6.0" text="Saturday">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="803.0" layoutY="6.0" text="Sunday">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="monthName" layoutX="59.0" layoutY="745.0" prefHeight="45.0" prefWidth="72.0" text="March">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="131.0" layoutY="753.0" text="2021">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="arrowRight" fitHeight="39.0" fitWidth="50.0" layoutX="183.0" layoutY="751.0" onMouseClicked="#NextMonth" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="file:/C:/Gradle/Nio/src/sample/img/ArrowRight.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="arrowLeft" fitHeight="39.0" fitWidth="50.0" layoutX="14.0" layoutY="751.0" onMouseClicked="#previousMonth" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="file:/C:/Gradle/Nio/src/sample/img/ArrowLeft.png" />
+                                       </image>
+                                    </ImageView>
+                                    <AnchorPane fx:id="AprilAnchorpane" layoutY="42.0" prefHeight="638.0" prefWidth="894.0" visible="false">
+                                       <children>
+                                          <GridPane fx:id="gridPaneMonth1" alignment="BOTTOM_CENTER" gridLinesVisible="true" prefHeight="680.0" prefWidth="894.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane fx:id="anchorpaneMD11" onMouseClicked="#addNote" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" prefHeight="66.0" prefWidth="53.0" text="29" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane fx:id="anchorpaneMD21" onMouseClicked="#addEntry2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" prefHeight="64.0" prefWidth="60.0" text="30" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane fx:id="anchorpaneMD31" onMouseClicked="#addEntry3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" prefHeight="64.0" prefWidth="51.0" text="31" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="45.0" prefWidth="21.0" text="1" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="1.0" prefHeight="45.0" prefWidth="21.0" text="2" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="21.0" text="3" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="6.0" prefHeight="45.0" prefWidth="21.0" text="4" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="4.0" prefHeight="45.0" prefWidth="21.0" text="5" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="45.0" prefWidth="21.0" text="6" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="66.0" prefWidth="37.0" text="7" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="3.0" prefHeight="66.0" prefWidth="39.0" text="8" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="69.0" prefWidth="35.0" text="9" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="10" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="11" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="70.0" prefWidth="54.0" text="12" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="14" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="13" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="15" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="16" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="17" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="18" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="19" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="20" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="4.0" prefHeight="70.0" prefWidth="54.0" text="21" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="7.0" prefHeight="70.0" prefWidth="54.0" text="22" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="23" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" prefHeight="70.0" prefWidth="54.0" text="24" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="25" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="26" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="27" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="54.0" text="28" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" prefHeight="70.0" prefWidth="54.0" text="29" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="70.0" prefWidth="54.0" text="30" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="70.0" prefWidth="54.0" style="-fx-background-color: grey;" text="1" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="70.0" prefWidth="54.0" style="-fx-background-color: grey;" text="2" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="44.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Untitled Tab 2">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
