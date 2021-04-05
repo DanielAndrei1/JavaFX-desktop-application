@@ -11,7 +11,7 @@ public class DBConnection {
         Connection con = null;
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-           // String url = "jdbc:sqlserver://LAPTOP-T7KM4803\\EXPRESS; databaseName=Nio; username=DAndrei; password=Thurrock01" ;
+           // String url = "jdbc:sqlserver://LAPTOP-T7KM4803\\EXPRESS; databaseName=Nio; username=; password=" ;
             String connectionUrl = "jdbc:sqlserver://LAPTOP-T7KM4803\\SQLEXPRESS; DatabaseName=Nio";
             String username = " ";
             String password = "";
